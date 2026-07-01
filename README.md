@@ -3,7 +3,7 @@ This repository contains the source code and simulations developed for two areas
 
 
 
-# Bessel Beam Generation and Superposition: Experimental and Numerical Characterization
+# Bessel Beam Generation and Superposition: Numerical Characterization
 
 This section describes the generation and numerical simulation of Bessel beams and their superposition, as presented in the work by Gámez et al. The methods and results cover both experimental setups and MATLAB-based computations.
 
@@ -19,25 +19,8 @@ To generate a superposition of two Bessel beams, a **Michelson interferometer** 
 
 ---
 
-## 2. Experimental Setup
 
-The key optical arrangement (see **Figure 1** in the original work) consists of:
-
-- A plane wave \( P \) illuminating an annular mask (slit of diameter \( d \)).
-- A converging lens of radius \( R \) and focal length \( f \), placed such that the mask is in the back focal plane.
-- The diffracted light forms a Bessel beam \( B \) that propagates without diffraction up to a distance:
-
-\[
-Z_{\text{max}} \approx \frac{R}{ \tan \theta } \quad \text{with} \quad \tan \theta = \frac{d}{2f}
-\]
-
-where \( \theta \) is the cone angle of the beam.
-
-For the superposition, the beam is split into two arms using a Michelson interferometer. The relative phase and lateral shift between the two beams are tuned by varying the arm lengths.
-
----
-
-## 3. Mathematical Description of the Bessel Beam
+##  Mathematical Description of the Bessel Beam
 
 The ideal electric field of a Bessel beam of order \( n \) is given by:
 
