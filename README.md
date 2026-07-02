@@ -107,6 +107,18 @@ $$
 
 where \( k_x, k_y \) are transverse spatial frequencies.
 
+<div align="center">
+  <img src="https://raw.githubusercontent.com/GamexIan/SkoltechGamez/627b7df61d237f294334c7f690756139d8065c9b/gauss1.png" alt="Evolución de la intensidad del haz gaussiano en medio no lineal - Vista 1" width="550"/>
+  <br>
+  <em>Figure: Diffraction patterns and far-field intensity profiles in a local medium placed at different positions relative to w0: z = z0, f, and ∆Φ0 = 2π..</em>
+</div>
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/GamexIan/SkoltechGamez/627b7df61d237f294334c7f690756139d8065c9b/gauss2.png" alt="Evolución de la intensidad del haz gaussiano en medio no lineal - Vista 2" width="550"/>
+  <br>
+  <em>Figure: Evolution of the beam transverse intensity profile along the propagation direction (View 2).</em>
+</div>
+
 
 
 
