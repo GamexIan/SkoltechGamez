@@ -124,4 +124,246 @@ where \( k_x, k_y \) are transverse spatial frequencies.
 
 
 
+# Inventory Replenishment Policies: A Queueing Theory Approach
+
+This section presents a comprehensive framework for modelling and optimizing inventory control systems using stochastic processes and queueing theory. The focus is on the **(s, S)** replenishment policy, where **s** is the reorder point and **S** is the order‑up‑to level. We derive performance measures, cost functions, and service levels for a queueing‑inventory system with lost sales and compound geometric demand. Python implementations are provided for numerical evaluation and policy optimisation.
+
+---
+
+## 1. Introduction
+
+Inventory management is a cornerstone of supply chain operations, aiming to balance holding costs, ordering costs, and lost sales in the face of uncertain demand. Scientific inventory control uses mathematical models to determine when and how much to reorder.
+
+This section is based on the theoretical foundations established by Axsäter (2015), Bijvank (2009), and the queueing‑inventory model of Yue et al. (2018). We cover:
+
+- **Inventory control fundamentals** – demand types, review policies, cost components, and service levels.
+- **Stochastic processes** – birth‑death and quasi‑birth‑death processes for modelling inventory and customer dynamics.
+- **Queueing theory with attached inventory** – a unified model where customers consume inventory during service, with lost sales.
+- **Goodness‑of‑fit testing** – the chi‑square test for validating demand distributions.
+- **Python implementation** – functions for stationary distributions, performance measures, cost evaluation, and policy optimisation.
+
+---
+
+## 2. Inventory Control Fundamentals
+
+### 2.1 Basic Concepts
+
+An **inventory system** represents the stock of products available to meet customer demand. The main goal is to minimise total costs while achieving a desired service level.
+
+**Classification of demand:**
+
+| Demand Type | Description |
+|-------------|-------------|
+| **Deterministic** | Future demand is known with certainty. |
+| **Stochastic** | Demand is uncertain and modelled via probability distributions. |
+
+**Review mechanisms:**
+
+- **Periodic review** – inventory is checked at fixed time intervals (e.g., weekly).
+- **Continuous review** – inventory is updated after every transaction.
+
+**Demand fulfilment:**
+
+- **Backordering** – unmet demand is satisfied later.
+- **Lost sales** – unmet demand is permanently lost.
+
+### 2.2 Replenishment Policies
+
+A replenishment policy defines the rules for ordering. The most widely used policy is the **(s, S)** policy:
+
+- **s** – reorder point: when inventory falls to or below **s**, an order is placed.
+- **S** – order‑up‑to level: the order quantity is \( S - \text{current inventory} \).
+
+### 2.3 Service Levels
+
+Two common service level measures:
+
+| Type | Description |
+|------|-------------|
+| **Type I (α)** | Probability that no stockout occurs during a replenishment cycle. |
+| **Type II (β)** | Fill rate: proportion of demand satisfied from available stock. |
+
+### 2.4 Cost Components
+
+| Cost | Symbol | Description |
+|------|--------|-------------|
+| Holding cost | \( h \) | Cost per unit held per time unit (warehousing, insurance, obsolescence). Typically 20‑30% of product value. |
+| Ordering cost | \( K \) | Fixed cost per order (administrative, transportation). |
+| Lost sales cost | \( \ell \) | Penalty per unit of lost demand. It includes lost profit and reputational damage. |
+
+**Lost sales cost estimation:**
+
+\[
+\ell = \varepsilon \, \bar{v} \, d, \qquad (3.1.2)
+\]
+
+where:
+- \( \varepsilon \ge 1 \) is a penalty multiplier,
+- \( \bar{v} \) is the average daily sales,
+- \( d \) is the average lead time in days.
+
+---
+
+## 3. Stochastic Processes for Inventory Modelling
+
+### 3.1 Birth‑Death Processes
+
+A **birth‑death process** is a continuous‑time Markov chain on non‑negative integers where only transitions to neighbouring states occur. In inventory systems:
+
+- **Births** = customer arrivals (demand),
+- **Deaths** = service completions (inventory consumption).
+
+**Assumptions:**
+1. Given \( N(t) = n \), the time to the next birth is exponential with rate \( \lambda_n \).
+2. Given \( N(t) = n \), the time to the next death is exponential with rate \( \mu_n \).
+3. Birth and death events are mutually independent.
+
+### 3.2 Quasi‑Birth‑Death (QBD) Processes
+
+A QBD process extends the birth‑death model to a two‑dimensional state space:
+
+\[
+S = \{(i, j) : i \ge 0,\; j = 0, 1, \ldots, m\}
+\]
+
+where:
+- \( i \) = **level** (e.g., number of customers in the system),
+- \( j \) = **phase** (e.g., inventory level).
+
+Level transitions are restricted to nearest neighbours, while phase transitions can be arbitrary. This structure is ideal for queueing‑inventory systems, where the inventory level acts as the phase.
+
+---
+
+## 4. Queueing Theory with Attached Inventory
+
+### 4.1 Basic Queueing System
+
+A **queueing system** models waiting phenomena and provides performance measures such as queue length, waiting time, and utilisation.
+
+**Kendall‑Lee notation:** \( (a/b/c)(d/e/f) \)
+
+| Symbol | Description |
+|--------|-------------|
+| \( a \) | Arrival distribution (e.g., M = exponential, D = deterministic, G = general) |
+| \( b \) | Service time distribution |
+| \( c \) | Number of servers |
+| \( d \) | Queue discipline (FCFS, LCFS, SIRO, PR, GD) |
+| \( e \) | System capacity (max customers) |
+| \( f \) | Customer population size |
+
+**Steady‑state performance measures:**
+
+| Measure | Symbol | Formula |
+|---------|--------|---------|
+| Average arrival rate | \( \bar{\lambda} \) | \( \bar{\lambda} = \sum_{n=0}^{N} \lambda_n P_n \) |
+| Server utilisation | \( \rho \) | \( \rho = \frac{\bar{\lambda}}{S\mu} \) |
+| Expected queue length | \( L_q \) | \( L_q = \sum_{n=S}^{N} (n - S)P_n \) |
+| Expected customers in system | \( L \) | \( L = L_q + S\rho \) |
+
+### 4.2 Queueing‑Inventory Model (Yue et al., 2018)
+
+We consider a system where:
+- Customers arrive according to a Poisson process with rate \( \lambda \).
+- Service times are exponential with rate \( \mu \) (single server, FCFS).
+- Each customer demands a random number of units following a **geometric distribution**:
+  \[
+  p_n = P(X = n) = p(1-p)^{n-1}, \quad n = 1, 2, \ldots, S. \qquad (3.3.5)
+  \]
+- Inventory is managed under an **(s, S)** policy.
+- Replenishment lead time is exponential with rate \( \nu \).
+- Demand that cannot be fulfilled is lost (lost sales, possibly partial).
+
+The system is a QBD process \( \{N(t), Y(t)\} \), where:
+- \( N(t) \) = number of customers in the system,
+- \( Y(t) \) = inventory level (0, 1, …, S).
+
+**Stationary distribution:**  
+For \( \rho = \lambda/\mu < 1 \), the joint distribution factors as:
+
+\[
+\pi_n = (1 - \rho) \rho^n \, \mathbf{x}, \qquad n \ge 0, \qquad (3.3.6)
+\]
+
+where \( \mathbf{x} = (x_0, x_1, \ldots, x_S) \) is the stationary distribution of the inventory process, given by:
+
+\[
+x_i = \begin{cases}
+\displaystyle \frac{\lambda}{\nu} \left( \frac{\lambda p}{\lambda + \nu} + q \right)^s x_S, & i = 0, \\[1.2ex]
+\displaystyle \frac{\lambda p}{\lambda + \nu} \left( \frac{\lambda p}{\lambda + \nu} + q \right)^{s-i} x_S, & 1 \le i \le s, \\[1.2ex]
+p \, x_S, & s+1 \le i \le S-1,
+\end{cases} \qquad (3.3.7)
+\]
+
+with
+
+\[
+x_S = \frac{1}{(S - s - 1)p + \frac{\lambda}{\nu} + 1}. \qquad (3.3.8)
+\]
+
+Here, \( q = 1-p \).
+
+**Performance measures:**
+
+| Measure | Symbol | Formula |
+|---------|--------|---------|
+| Expected customers in system | \( L \) | \( L = \frac{\lambda}{\mu - \lambda} \) |
+| Customer loss rate | \( V^c \) | \( V^c = \lambda x_0 \) |
+| Expected inventory level | \( I \) | \( I = \sum_{i=1}^{S} i x_i \) |
+| Replenishment rate | \( R \) | \( R = \nu \sum_{i=0}^{S} x_i \) |
+| Expected lost sales (units) | \( V^d \) | \( V^d = \frac{1}{p} \left( \lambda x_0 + \mu \sum_{i=1}^{S} q^i x_i \right) \) |
+
+**Total cost function:**
+
+\[
+F(s, S) = \omega L + h I + K R + \ell V^d, \qquad (3.3.14)
+\]
+
+where:
+- \( \omega \) = waiting cost per customer per time unit,
+- \( h \) = holding cost per unit per time unit,
+- \( K \) = fixed ordering cost,
+- \( \ell \) = lost sales cost per unit.
+
+**Service level (fill rate):**
+
+\[
+\beta = 1 - \frac{\lambda}{(S - s)\nu + \lambda} \left( \frac{\lambda}{\lambda + \nu} \right)^s. \qquad (3.3.15)
+\]
+
+---
+
+## 5. Goodness‑of‑Fit Testing
+
+A **goodness‑of‑fit test** formally evaluates whether observed data \( X_1, \ldots, X_n \) come from a specified distribution \( \hat{f} \). We use the **chi‑square test** with significance level \( \alpha = 0.05 \).
+
+**Procedure:**
+
+1. Divide the data range into \( k \) intervals: \( [a_0, a_1), [a_1, a_2), \ldots, [a_{k-1}, a_k) \).
+2. Count the observed frequencies \( N_j \) in each interval.
+3. Compute the expected probability \( p_j \) under the hypothesised distribution:
+   - Continuous: \( p_j = \int_{a_{j-1}}^{a_j} \hat{f}(x) \, dx \)
+   - Discrete: \( p_j = \sum_{a_{j-1} \le x < a_j} \hat{p}(x) \)
+4. Compute the test statistic:
+   \[
+   \hat{\chi}^2 = \sum_{j=1}^{k} \frac{(N_j - n p_j)^2}{n p_j}. \qquad (3.4.4)
+   \]
+5. Reject \( H_0 \) if \( \hat{\chi}^2 > \chi^2_{k-1, 1-\alpha} \).
+
+---
+
+## 6. Python Implementation
+
+The following Python code implements the theoretical model, including the stationary distribution, performance measures, cost function, and numerical optimisation of the (s, S) policy. A chi‑square test function is also provided.
+
+### 6.1 Required Libraries
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import chi2, geom
+from scipy.optimize import minimize_scalar
+
+
+
+
 
