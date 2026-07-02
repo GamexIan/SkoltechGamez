@@ -131,17 +131,6 @@ This section presents a comprehensive framework for modelling and optimizing inv
 ## 1. Introduction
 
 Inventory management is a cornerstone of supply chain operations, aiming to balance holding costs, ordering costs, and lost sales in the face of uncertain demand. Scientific inventory control uses mathematical models to determine when and how much to reorder.
-
-This section is based on the theoretical foundations established by Axsäter (2015), Bijvank (2009), and the queueing‑inventory model of Yue et al. (2018). We cover:
-
-- **Inventory control fundamentals** – demand types, review policies, cost components, and service levels.
-- **Stochastic processes** – birth‑death and quasi‑birth‑death processes for modelling inventory and customer dynamics.
-- **Queueing theory with attached inventory** – a unified model where customers consume inventory during service, with lost sales.
-- **Goodness‑of‑fit testing** – the chi‑square test for validating demand distributions.
-- **Python implementation** – functions for stationary distributions, performance measures, cost evaluation, and policy optimisation.
-
----
-
 ## 2. Inventory Control Fundamentals
 
 ### 2.1 Basic Concepts
