@@ -69,7 +69,7 @@ The model accounts for locality by modifying the width of the phase‑change pro
 A Gaussian beam (see Eq. (2.29) in the original work) with waist \( \omega_0 \) and wavelength \( \lambda \) has a complex amplitude at the exit of the medium given by:
 
 $$
-E(r, z) = A_0 \frac{\omega_0}{\omega(z)} \exp\left[-\frac{r^2}{\omega(z)^2}\right] \exp\left[-\frac{\alpha L}{2}\right] \exp\left[-ikz - ik\frac{r^2}{2R(z)} + i\zeta(z)\right], \tag{4.1}
+E(r, z) = A_0 \frac{\omega_0}{\omega(z)}\exp\left[-\frac{r^2}{\omega(z)^2}\right]\exp\left[-\frac{\alpha L}{2}\right]\exp\left[-ikz - ik\frac{r^2}{2R(z)} + i\zeta(z)\right], \tag{4.1}
 $$
 
 where:
