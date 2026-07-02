@@ -9,7 +9,7 @@ This section describes the generation and numerical simulation of Bessel beams a
 
 ---
 
-## 1. Introduction
+##  Introduction
 
 Bessel beams are particular solutions to the electromagnetic wave equation that exhibit the remarkable property of **diffraction-free** propagation. Unlike ordinary Gaussian beams, which spread with distance, a Bessel beam maintains a constant transverse intensity profile over a certain propagation length \( Z_{\text{max}} \). This behaviour arises from a specific transverse intensity distribution described by Bessel functions of the first kind.
 
@@ -28,7 +28,7 @@ This superposition gives rise to characteristic interference patterns that depen
 
 <img src="https://raw.githubusercontent.com/GamexIan/SkoltechGamez/2ad4dededf0504931ff66ec8555e5782915cb15f/interfe.png" alt="Patrón de interferencia de dos haces Bessel" width="450"/>
 
-## 5. Numerical Simulations in MATLAB
+##  Numerical Simulations in MATLAB
 
 
 The complete MATLAB script is available in this repository. You can view it online or download it directly using the links below:
