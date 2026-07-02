@@ -78,8 +78,9 @@ with:
 - \( \Delta n(I) = n_2 I + s (R * I) \) (local and nonlocal contributions),
 - \( \alpha(I) = \alpha_0 + \beta I \) (linear and nonlinear absorption),
 - \( n_2 \) the Kerr coefficient.
-
-  <div align="center"> <img src="https://raw.githubusercontent.com/GamexIan/SkoltechGamez/5f39a46cc7ae92298b3090faeccef3dcbb067d1f/evolution1.png" alt="Intensity evolution of a Gaussian beam in a nonlinear medium" width="550"/> <br> <em>Figure: Evolution of the beam transverse intensity profile along the propagation direction. The colour scale indicates the normalised intensity.</em> </div>
+- 📄 **[View the full code on GitHub](https://github.com/GamexIan/SkoltechGamez/blob/5f39a46cc7ae92298b3090faeccef3dcbb067d1f/Evolution.m)**
+- 
+  <div align="center"> <img src="https://raw.githubusercontent.com/GamexIan/SkoltechGamez/5f39a46cc7ae92298b3090faeccef3dcbb067d1f/evolution1.png" alt="Intensity evolution of a Gaussian beam in a nonlinear medium" width="550"/> <br> <em>Figure:  Propagation of a Gaussian beam in a locally nonlinear medium, viewed from above</em> </div>
 
 ###  Operator Splitting
 
