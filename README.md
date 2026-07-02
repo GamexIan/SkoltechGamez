@@ -88,16 +88,9 @@ $$
 $$
 
 where:
-$$
-\( \hat{D} = \frac{i}{2k} \nabla_{\perp}^2 \)
-$$
-is the diffraction operator,
 
-$$
-- \( \hat{N} = \frac{i k}{n_0} \Delta n(I) - \frac{\alpha(I)}{2} \)
-$$
-
-   is the nonlinear operator.
+- $ \hat{D} = \frac{i}{2k} \nabla_{\perp}^2 $ is the diffraction operator,
+- $ \hat{N} = \frac{i k}{n_0} \Delta n(I) - \frac{\alpha(I)}{2} $ is the nonlinear operator.
 
 For a small propagation step \( h \), the formal solution is approximated by the symmetric split‑step:
 
