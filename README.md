@@ -54,7 +54,7 @@ This section covers the numerical simulation of a Gaussian beam propagating thro
 
 ---
 
-## 1. Introduction
+##  Introduction
 
 When a material exhibits an intensity‑dependent refractive index, a well‑defined incident intensity distribution is modified as it propagates through the sample. The light–matter interaction determines the nature of the nonlinear response, which can be local or non‑local. This work presents a numerical model to describe the local nonlinear response of a thin medium under Gaussian illumination, considering the field at the exit plane of the material. A Fourier transform is then applied to obtain far‑field diffraction patterns.
 
@@ -62,9 +62,9 @@ The model accounts for locality by modifying the width of the phase‑change pro
 
 ---
 
-## 2. Theoretical Model
+##  Theoretical Model
 
-### 2.1 Gaussian Beam Propagation
+###  Gaussian Beam Propagation
 
 
 Under the **paraxial approximation** (slowly varying envelope), the field is written as \( E(x,y,z) = \psi(x,y,z) e^{-ikz} \), leading to the paraxial wave equation:
@@ -79,7 +79,7 @@ with:
 - \( \alpha(I) = \alpha_0 + \beta I \) (linear and nonlinear absorption),
 - \( n_2 \) the Kerr coefficient.
 
-### 3.1 Operator Splitting
+###  Operator Splitting
 
 Equation (4.21) can be written as:
 
@@ -88,14 +88,20 @@ $$
 $$
 
 where:
-- \( \hat{D} = \frac{i}{2k} \nabla_{\perp}^2 \) is the diffraction operator,
-- \( \hat{N} = \frac{i k}{n_0} \Delta n(I) - \frac{\alpha(I)}{2} \) is the nonlinear operator.
+$$
+\( \hat{D} = \frac{i}{2k} \nabla_{\perp}^2 \)
+$$
+is the diffraction operator,
+
+$$
+- \( \hat{N} = \frac{i k}{n_0} \Delta n(I) - \frac{\alpha(I)}{2} \)
+$$
+
+   is the nonlinear operator.
 
 For a small propagation step \( h \), the formal solution is approximated by the symmetric split‑step:
 
-$$
-\psi(z+h) \approx \exp\left(\frac{h}{2}\hat{N}\right) \exp\left(h\hat{D}\right) \exp\left(\frac{h}{2}\hat{N}\right) \psi(z) \qquad (3)
-$$
+$$\psi(z+h) \approx \exp\left(\frac{h}{2}\hat{N}\right) \exp\left(h\hat{D}\right) \exp\left(\frac{h}{2}\hat{N}\right) \psi(z) \qquad (3) $$
 
 The diffraction step is performed in the Fourier domain using the paraxial transfer function:
 
