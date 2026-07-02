@@ -17,27 +17,8 @@ The experimental generation of Bessel beams is commonly achieved using an **annu
 
 To generate a superposition of two Bessel beams, a **Michelson interferometer** is used to split the beam intensity, with the beam splitter placed just after the lens to ensure operation within the diffraction-free region. By adjusting the optical path difference between the two arms, one can control the separation and relative phase of the two beams—parameters that are systematically characterised.
 
----
 
-
-##  Mathematical Description of the Bessel Beam
-
-The ideal electric field of a Bessel beam of order \( n \) is given by:
-
-\[
-E(r, \phi, z) = A_0 \, e^{i k_z z} \, J_n(k_r r) \, e^{\pm i n \phi}
-\]
-
-where:
-- \( J_n \) is the Bessel function of the first kind of order \( n \),
-- \( k_z \) and \( k_r \) are the longitudinal and radial wave numbers, respectively,
-- \( k = \sqrt{k_z^2 + k_r^2} = 2\pi/\lambda \) is the total wave number.
-
-The transverse intensity profile is proportional to \( |J_n(k_r r)|^2 \), which displays concentric rings.
-
----
-
-## 4. Superposition of Two Bessel Beams
+##  Superposition of Two Bessel Beams
 
 When two Bessel beams (with possibly different amplitudes, phases, and spatial offsets) are superposed, the resulting intensity distribution is obtained by adding their complex fields and taking the squared modulus:
 
