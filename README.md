@@ -81,7 +81,7 @@ with:
 
 ###  Operator Splitting
 
-Equation (4.21) can be written as:
+Equation (1) can be written as:
 
 $$
 \frac{\partial \psi}{\partial z} = (\hat{D} + \hat{N}) \psi \qquad (2)
