@@ -32,6 +32,8 @@ This superposition gives rise to characteristic interference patterns that depen
 
 ## 5. Numerical Simulations in MATLAB
 
+<img src="https://raw.githubusercontent.com/GamexIan/SkoltechGamez/ec8e202388b58fda8247028848153173a5ad01f9/interfeskol.png" alt="Numerical interference pattern of two Bessel beams" width="600"/>
+
 
 
 
