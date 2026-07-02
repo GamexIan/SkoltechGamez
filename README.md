@@ -32,6 +32,15 @@ This superposition gives rise to characteristic interference patterns that depen
 
 ## 5. Numerical Simulations in MATLAB
 
+## 2. Code Access & Download
+
+The complete MATLAB script is available in this repository. You can view it online or download it directly using the links below:
+
+- 📄 **[View the full code on GitHub](https://github.com/GamexIan/SkoltechGamez/blob/ec8e202388b58fda8247028848153173a5ad01f9/twobeams.m)** (with syntax highlighting)
+- ⬇️ **[Download the raw `.m` file](https://raw.githubusercontent.com/GamexIan/SkoltechGamez/ec8e202388b58fda8247028848153173a5ad01f9/twobeams.m)** (right-click and select "Save link as...")
+
+Alternatively, you can copy the complete code directly from the block below:
+
 <img src="https://raw.githubusercontent.com/GamexIan/SkoltechGamez/ec8e202388b58fda8247028848153173a5ad01f9/interfeskol.png" alt="Numerical interference pattern of two Bessel beams" width="600"/>
 
 
