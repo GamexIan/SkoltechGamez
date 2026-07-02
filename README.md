@@ -29,7 +29,7 @@ This superposition gives rise to characteristic interference patterns that depen
 <div align="center">
   <img src="https://raw.githubusercontent.com/GamexIan/SkoltechGamez/2ad4dededf0504931ff66ec8555e5782915cb15f/interfe.png" alt="Patrón de interferencia de dos haces Bessel" style="width: 50%;"/>
   <br>
-  <em>Figura: The numerical experimental superposition of two Bessel beams.</em>
+  <em>Figure: The experimental superposition of two Bessel beams.</em>
 </div>
 
 ##  Numerical Simulations in MATLAB
