@@ -69,7 +69,7 @@ The model accounts for locality by modifying the width of the phase‑change pro
 A Gaussian beam (see Eq. (2.29) in the original work) with waist \( \omega_0 \) and wavelength \( \lambda \) has a complex amplitude at the exit of the medium given by:
 
 $$
-E(r, z) = A_0 \frac{\omega_0}{\omega(z)}\exp\left[-\frac{r^2}{\omega(z)^2}\right]\exp\left[-\frac{\alpha L}{2}\right]\exp\left[-ikz - ik\frac{r^2}{2R(z)} + i\zeta(z)\right], \tag{4.1}
+E(r, z) = A_0 \frac{\omega_0}{\omega(z)} \exp\left[-\frac{r^2}{\omega(z)^2}\right] \exp\left[-\frac{\alpha L}{2}\right] \exp\left[-ikz - ik\frac{r^2}{2R(z)} + i\zeta(z)\right] \qquad (4.1)
 $$
 
 where:
@@ -83,7 +83,7 @@ where:
 For a thin sample (\( L \ll z_0 \), with \( z_0 \) the Rayleigh length), the field is assumed to acquire only a small phase change \( \Delta\phi \) at the output. This phase change is obtained by integrating the refractive‑index change along the sample:
 
 $$
-\Delta \phi = k \int_{0}^{L} \Delta n(I) \, dz, \tag{4.2}
+\Delta \phi = k \int_{0}^{L} \Delta n(I) \, dz \qquad (4.2)
 $$
 
 where \( \Delta n(I) \) represents the nonlinear contribution to the refractive index.
@@ -93,7 +93,7 @@ where \( \Delta n(I) \) represents the nonlinear contribution to the refractive 
 In the most general case, the nonlinear index change can be expressed as a convolution with a response function \( R(\mathbf{r}) \) [32]:
 
 $$
-\Delta n(I) = s \int R(\vec{\xi} - \vec{r})\, I(\vec{\xi}, z)\, d\vec{\xi}, \tag{4.4}
+\Delta n(I) = s \int R(\vec{\xi} - \vec{r})\, I(\vec{\xi}, z)\, d\vec{\xi} \qquad (4.4)
 $$
 
 where:
@@ -104,13 +104,13 @@ where:
 For a purely local response, \( R(\mathbf{r}) = \delta(\mathbf{r}) \), and we recover:
 
 $$
-\Delta n = s \, I(\mathbf{r}, z). \tag{4.5}
+\Delta n = s \, I(\mathbf{r}, z) \qquad (4.5)
 $$
 
 In this work we focus on the local case and use a Gaussian response function for numerical implementation:
 
 $$
-R(x, y) = \frac{1}{2\pi\sigma_{nl}^2} \exp\left(-\frac{x^2 + y^2}{2\sigma_{nl}^2}\right), \tag{4.6}
+R(x, y) = \frac{1}{2\pi\sigma_{nl}^2} \exp\left(-\frac{x^2 + y^2}{2\sigma_{nl}^2}\right) \qquad (4.6)
 $$
 
 where \( \sigma_{nl} \) is the characteristic width of the nonlocal response [42].
@@ -122,13 +122,13 @@ where \( \sigma_{nl} \) is the characteristic width of the nonlocal response [42
 We start from the scalar Helmholtz equation for a single frequency component:
 
 $$
-\frac{\partial^2 E}{\partial x^2} + \frac{\partial^2 E}{\partial y^2} + \frac{\partial^2 E}{\partial z^2} + \frac{\omega^2}{c^2} n^2(\omega, x, y) E = 0. \tag{4.7}
+\frac{\partial^2 E}{\partial x^2} + \frac{\partial^2 E}{\partial y^2} + \frac{\partial^2 E}{\partial z^2} + \frac{\omega^2}{c^2} n^2(\omega, x, y) E = 0 \qquad (4.7)
 $$
 
 Under the **paraxial approximation** (slowly varying envelope), the field is written as \( E(x,y,z) = \psi(x,y,z) e^{-ikz} \), leading to the paraxial wave equation:
 
 $$
-\nabla_{\perp}^2 \psi - 2ik \frac{\partial \psi}{\partial z} + 2k^2 \frac{\Delta n(I)}{n_0} \psi + ik\alpha(I) \psi = 0, \tag{4.21}
+\nabla_{\perp}^2 \psi - 2ik \frac{\partial \psi}{\partial z} + 2k^2 \frac{\Delta n(I)}{n_0} \psi + ik\alpha(I) \psi = 0 \qquad (4.21)
 $$
 
 with:
@@ -142,7 +142,7 @@ with:
 Equation (4.21) can be written as:
 
 $$
-\frac{\partial \psi}{\partial z} = (\hat{D} + \hat{N}) \psi, \tag{4.22}
+\frac{\partial \psi}{\partial z} = (\hat{D} + \hat{N}) \psi \qquad (4.22)
 $$
 
 where:
@@ -152,13 +152,13 @@ where:
 For a small propagation step \( h \), the formal solution is approximated by the symmetric split‑step:
 
 $$
-\psi(z+h) \approx \exp\left(\frac{h}{2}\hat{N}\right) \exp\left(h\hat{D}\right) \exp\left(\frac{h}{2}\hat{N}\right) \psi(z). \tag{4.29}
+\psi(z+h) \approx \exp\left(\frac{h}{2}\hat{N}\right) \exp\left(h\hat{D}\right) \exp\left(\frac{h}{2}\hat{N}\right) \psi(z) \qquad (4.29)
 $$
 
 The diffraction step is performed in the Fourier domain using the paraxial transfer function:
 
 $$
-\mathcal{L}_{\text{paraxial}}(\Delta z) = \exp\left[-i \Delta z \frac{k_x^2 + k_y^2}{2k}\right], \tag{4.43}
+\mathcal{L}_{\text{paraxial}}(\Delta z) = \exp\left[-i \Delta z \frac{k_x^2 + k_y^2}{2k}\right] \qquad (4.43)
 $$
 
 where \( k_x, k_y \) are transverse spatial frequencies.
@@ -177,7 +177,6 @@ For each propagation step \( \Delta z \):
    \( \psi(z+\Delta z) = \exp\left(\frac{\Delta z}{2}\hat{N}\right) \psi^{(2)} \)
 
 This symmetric scheme is second‑order accurate in \( \Delta z \) and unconditionally stable.
-
 ---
 
 
