@@ -26,15 +26,17 @@ $$ I_{\text{total}}(r, \phi, z) = \left| E_1(r, \phi, z) + E_2(r, \phi, z) \righ
 
 This superposition gives rise to characteristic interference patterns that depend on the relative phase and separation. The experimental cross‑sections  and their corresponding numerical simulations  demonstrate excellent agreement.
 
-<img src="https://raw.githubusercontent.com/GamexIan/SkoltechGamez/2ad4dededf0504931ff66ec8555e5782915cb15f/interfe.png" alt="Patrón de interferencia de dos haces Bessel" width="450"/>
-
+<div align="center">
+  <img src="https://raw.githubusercontent.com/GamexIan/SkoltechGamez/2ad4dededf0504931ff66ec8555e5782915cb15f/interfe.png" alt="Patrón de interferencia de dos haces Bessel" style="width: 50%;"/>
+  <br>
+  <em>Figura: Sección transversal de la superposición de dos haces Bessel mostrando el patrón de interferencia característico.</em>
+</div>
 ##  Numerical Simulations in MATLAB
 
 
 The complete MATLAB script is available in this repository. You can view it online or download it directly using the links below:
 
 - 📄 **[View the full code on GitHub](https://github.com/GamexIan/SkoltechGamez/blob/ec8e202388b58fda8247028848153173a5ad01f9/twobeams.m)** 
-
 
 
 <div align="center">
