@@ -11,7 +11,7 @@ This section describes the generation and numerical simulation of Bessel beams a
 
 ##  Introduction
 
-Bessel beams are particular solutions to the electromagnetic wave equation that exhibit the remarkable property of **diffraction-free** propagation. Unlike ordinary Gaussian beams, which spread with distance, a Bessel beam maintains a constant transverse intensity profile over a certain propagation length $$ Z_{\text{max}} $$ . This behaviour arises from a specific transverse intensity distribution described by Bessel functions of the first kind.
+Bessel beams are particular solutions to the electromagnetic wave equation that exhibit the remarkable property of **diffraction-free** propagation. Unlike ordinary Gaussian beams, which spread with distance, a Bessel beam maintains a constant transverse intensity profile over a certain propagation length $$Z_{\text{max}}$$ . This behaviour arises from a specific transverse intensity distribution described by Bessel functions of the first kind.
 
 The experimental generation of Bessel beams is commonly achieved using an **annular aperture mask** illuminated by a plane wave, followed by a converging lens placed at its focal distance. The light diffracted by the annular slit produces a Bessel beam.
 
