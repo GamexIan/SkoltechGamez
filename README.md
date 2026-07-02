@@ -22,9 +22,7 @@ To generate a superposition of two Bessel beams, a **Michelson interferometer** 
 
 When two Bessel beams (with possibly different amplitudes, phases, and spatial offsets) are superposed, the resulting intensity distribution is obtained by adding their complex fields and taking the squared modulus:
 
-\[
-I_{\text{total}}(r, \phi, z) = \left| E_1(r, \phi, z) + E_2(r, \phi, z) \right|^2
-\]
+$$ I_{\text{total}}(r, \phi, z) = \left| E_1(r, \phi, z) + E_2(r, \phi, z) \right|^2 $$
 
 This superposition gives rise to characteristic interference patterns that depend on the relative phase and separation. The experimental cross‑sections  and their corresponding numerical simulations  demonstrate excellent agreement.
 
