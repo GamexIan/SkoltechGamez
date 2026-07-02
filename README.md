@@ -107,6 +107,7 @@ $$
 
 where \( k_x, k_y \) are transverse spatial frequencies.
 
+📄 **[View the full code on GitHub](https://github.com/GamexIan/SkoltechGamez/blob/e9019e28e27adcd40b2a203bf6a134e0300420a8/Evolution.m)**
 <div align="center">
   <img src="https://raw.githubusercontent.com/GamexIan/SkoltechGamez/627b7df61d237f294334c7f690756139d8065c9b/gauss1.png" alt="Evolución de la intensidad del haz gaussiano en medio no lineal - Vista 1" width="450"/>
   <br>
