@@ -32,14 +32,7 @@ This superposition gives rise to characteristic interference patterns that depen
 
 ## 5. Numerical Simulations in MATLAB
 
-The numerical implementation in MATLAB replicates the experimental conditions:
 
-- The annular aperture and lens are modelled as an optical system that produces the Bessel beam.
-- The superposition is computed by adding two Bessel fields with adjustable parameters (offset, phase, amplitude).
-- The intensity profiles are plotted in 2D cross‑sections and as line‑scans through the centre.
 
-These simulations confirm:
-- The formation of the expected interference fringes.
-- The preservation of the non‑diffracting nature over the computed \( Z_{\text{max}} \).
-- The ability to control the beam characteristics by varying the optical parameters.
+
 
