@@ -38,6 +38,11 @@ The complete MATLAB script is available in this repository. You can view it onli
 
 <img src="https://raw.githubusercontent.com/GamexIan/SkoltechGamez/ec8e202388b58fda8247028848153173a5ad01f9/interfeskol.png" alt="Numerical interference pattern of two Bessel beams" width="600"/>
 
+<div align="center">
+  <img src="https://raw.githubusercontent.com/GamexIan/SkoltechGamez/ec8e202388b58fda8247028848153173a5ad01f9/interfeskol.png" alt="Numerical interference pattern of two Bessel beams" width="600"/>
+  <br>
+  <em>Figure: Cross-section of the numerical superposition of two Bessel beams, showing the characteristic interference fringes.</em>
+</div>
 
 
 
