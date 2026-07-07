@@ -1,9 +1,4 @@
-"""
-THIS SCRIPT DOES NOT TAKE INTO ACCOUNT UNITS SOLD WHOLESALE
 
-Script to generate files with the data needed to populate the inventory level table
-with the inventory level
-"""
 import sys
 from datetime import date
 import psycopg2
