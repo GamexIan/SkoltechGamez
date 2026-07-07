@@ -346,4 +346,7 @@ The following Python code implements the theoretical model, including the statio
 📄 **[View the full code on GitHub] (https://github.com/GamexIan/SkoltechGamez/blob/529a0b5194a1ccc13af56b3fbd661e6e4e7f1d62/level.py)**
 
 
+📄 **[View the full code on GitHub] (https://github.com/GamexIan/SkoltechGamez/blob/d1d266a7e73082e637cb15c2d023a0626a4fedff/sales.py)**
+
+
 
