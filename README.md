@@ -342,15 +342,8 @@ A **goodness‑of‑fit test** formally evaluates whether observed data $X_1, \l
 
 The following Python code implements the theoretical model, including the stationary distribution, performance measures, cost function, and numerical optimisation of the (s, S) policy. A chi‑square test function is also provided.
 
-### 6.1 Required Libraries
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.stats import chi2, geom
-from scipy.optimize import minimize_scalar
-
-
+📄 **[View the full code on GitHub] (https://github.com/GamexIan/SkoltechGamez/blob/529a0b5194a1ccc13af56b3fbd661e6e4e7f1d62/level.py)**
 
 
 
