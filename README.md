@@ -386,11 +386,11 @@ serie_interp = serie.interpolate(method='linear', limit_area=None)
 serie_interp = serie_interp.ffill().bfill()
 ```
 
-📐 **(Linear Interpolation)**:
+ **(Linear Interpolation)**:
 If two valid measurements exist at times \(t_0\) and \(t_1\) with values \(y_0\) and \(y_1\), the value at an intermediate time \(t\) is estimated as:  
-\[
-y(t) = y_0 + (y_1 - y_0) \cdot \frac{t - t_0}{t_1 - t_0}
-\]
+$$ y(t) = y_0 + (y_1 - y_0) \cdot \frac{t - t_0}{t_1 - t_0} $$
+
+
 
 *Edge Handling*:
 - `.ffill()` (Forward Fill) propagates the **last valid observation** forward to fill trailing gaps.
