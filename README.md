@@ -1,3 +1,4 @@
+[![LaTeX](https://img.shields.io/badge/LaTeX-Equations-blue)](https://www.latex-project.org/)
 # Gamez Ian 
 This repository contains the source code and simulations developed for two areas of applied research: Optical Physics (digital signal processing and beam propagation) and Operations Engineering (supply chain management )
 
