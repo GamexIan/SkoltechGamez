@@ -331,4 +331,72 @@ The following Python code implements the theoretical model, including the statio
 📄 **[View the full code on GitHub] (https://github.com/GamexIan/SkoltechGamez/blob/d1d266a7e73082e637cb15c2d023a0626a4fedff/sales.py)**
 
 
+#  Air Quality Data Imputation Tool
+
+This  Python script designed to **reconstruct missing daily ozone (O₃) concentration records** from environmental monitoring stations. It uses a hybrid approach that combines **cross-station linear regression** with **temporal interpolation** to generate a complete, reliable time series for air quality analysis.
+
+📄 **[View the full code on GitHub] ()**
+
+Air quality datasets in Puebla suffer from missing values due to sensor malfunctions or communication failures. This script fills gaps in the **"AGUA SANTA"** ozone monitoring station by leveraging:
+1.  **Statistical correlation** with a nearby station **"NINFAS"** (Regression Imputation).
+2.  **Temporal continuity** (Linear Interpolation & forward/backward filling).
+
+
+
+The script reads all sheets from an Excel file (`Base de datos O3 para Nian.xlsx`), extracts the required columns (`Dia`, `AGUA SANTA O3 (ppm) Promedio Diario`, and `NINFAS O3 (ppm) Promedio Diario`), and filters the data to the 2021–2025 period.
+
+```python
+df_temp['fecha'] = pd.to_datetime(df_temp['fecha'], errors='coerce')
+df_temp = df_temp[df_temp['fecha'].dt.year.between(2021, 2025)]
+```
+
+ The script identifies days where **both** stations have valid data and trains a linear regression model to predict *AGUA SANTA* using *NINFAS*.
+
+```python
+X = df_complete[['ninfas']].values
+y = df_complete['agua_santa'].values
+reg = LinearRegression().fit(X, y)
+```
+
+The model finds the best-fit line:  
+\[
+y = \beta_0 + \beta_1 \cdot x + \varepsilon
+\]
+Where:
+- \(y\) = AGUA SANTA concentration  
+- \(x\) = NINFAS concentration  
+
+Using **Ordinary Least Squares (OLS)** , the coefficients are calculated as:  
+\[
+\beta_1 = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sum (x_i - \bar{x})^2}, \quad \beta_0 = \bar{y} - \beta_1 \bar{x}
+\]
+
+For days where *AGUA SANTA* is missing but *NINFAS* is available, the model predicts the missing value:
+```python
+df_all.loc[mask_faltan_agua, 'agua_santa_imputed'] = reg.predict(X_pred)
+```
+
+The script prints the resulting equation (e.g., `agua_santa = 0.85 * ninfas + 0.02`) and the \(R^2\) score, indicating the strength of the relationship.
+
+###  Temporal Interpolation & Edge Filling
+After regression, there may still be gaps (days where *both* stations lack data). The script applies **linear interpolation** across time to fill these internal gaps.
+
+```python
+serie_interp = serie.interpolate(method='linear', limit_area=None)
+serie_interp = serie_interp.ffill().bfill()
+```
+
+📐 **(Linear Interpolation)**:
+If two valid measurements exist at times \(t_0\) and \(t_1\) with values \(y_0\) and \(y_1\), the value at an intermediate time \(t\) is estimated as:  
+\[
+y(t) = y_0 + (y_1 - y_0) \cdot \frac{t - t_0}{t_1 - t_0}
+\]
+
+*Edge Handling*:
+- `.ffill()` (Forward Fill) propagates the **last valid observation** forward to fill trailing gaps.
+- `.bfill()` (Backward Fill) propagates the **next valid observation** backward to fill leading gaps.
+
+
+
+
 
