@@ -376,9 +376,18 @@ df_all.loc[mask_faltan_agua, 'agua_santa_imputed'] = reg.predict(X_pred)
 
 The script prints the resulting equation (e.g., `agua_santa = 0.85 * ninfas + 0.02`) and the \( R^2 \) score, indicating the strength of the relationship.
 
+<div align="center">
+  <img src="https://github.com/GamexIan/SkoltechGamez/blob/9e113a59fef3b7b2b0e3f7971160566d2ae893e2/comp_hub.png" alt="Relacion entre concentraciones de O3" style="width: 50%;"/>
+  <br>
+  <em>Figure: Relationship between O3 concentrations at both stations.</em>
+</div>
+
+
+
+
 ---
 
-### 3. Temporal Interpolation & Edge Filling
+###  Temporal Interpolation & Edge Filling
 After regression, there may still be gaps (days where *both* stations lack data). The script applies **linear interpolation** across time to fill these internal gaps.
 
 ```python
