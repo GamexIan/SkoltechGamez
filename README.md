@@ -335,7 +335,7 @@ The following Python code implements the theoretical model, including the statio
 
 This  Python script designed to **reconstruct missing daily ozone (O₃) concentration records** from environmental monitoring stations. It uses a hybrid approach that combines **cross-station linear regression** with **temporal interpolation** to generate a complete, reliable time series for air quality analysis.
 
-📄 **[View the full code on GitHub] ()**
+📄 **[View the full code on GitHub] (https://github.com/GamexIan/SkoltechGamez/blob/d4228d6aa0792994e41c7e615e165fa70e8696b3/ozone.py)**
 
 Air quality datasets in Puebla suffer from missing values due to sensor malfunctions or communication failures. This script fills gaps in the **"AGUA SANTA"** ozone monitoring station by leveraging:
 1.  **Statistical correlation** with a nearby station **"NINFAS"** (Regression Imputation).
