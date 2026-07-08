@@ -359,26 +359,25 @@ reg = LinearRegression().fit(X, y)
 ```
 
 The model finds the best-fit line:  
-\[
-y = \beta_0 + \beta_1 \cdot x + \varepsilon
-\]
+$$ y = \beta_0 + \beta_1 \cdot x + \varepsilon $$
+
 Where:
-- \(y\) = AGUA SANTA concentration  
-- \(x\) = NINFAS concentration  
+- \( y \) = AGUA SANTA concentration  
+- \( x \) = NINFAS concentration  
 
 Using **Ordinary Least Squares (OLS)** , the coefficients are calculated as:  
-\[
-\beta_1 = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sum (x_i - \bar{x})^2}, \quad \beta_0 = \bar{y} - \beta_1 \bar{x}
-\]
+$$ \beta_1 = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sum (x_i - \bar{x})^2}, \quad \beta_0 = \bar{y} - \beta_1 \bar{x} $$
 
 For days where *AGUA SANTA* is missing but *NINFAS* is available, the model predicts the missing value:
 ```python
 df_all.loc[mask_faltan_agua, 'agua_santa_imputed'] = reg.predict(X_pred)
 ```
 
-The script prints the resulting equation (e.g., `agua_santa = 0.85 * ninfas + 0.02`) and the \(R^2\) score, indicating the strength of the relationship.
+The script prints the resulting equation (e.g., `agua_santa = 0.85 * ninfas + 0.02`) and the \( R^2 \) score, indicating the strength of the relationship.
 
-###  Temporal Interpolation & Edge Filling
+---
+
+### 3. Temporal Interpolation & Edge Filling
 After regression, there may still be gaps (days where *both* stations lack data). The script applies **linear interpolation** across time to fill these internal gaps.
 
 ```python
@@ -386,15 +385,17 @@ serie_interp = serie.interpolate(method='linear', limit_area=None)
 serie_interp = serie_interp.ffill().bfill()
 ```
 
- **(Linear Interpolation)**:
-If two valid measurements exist at times \(t_0\) and \(t_1\) with values \(y_0\) and \(y_1\), the value at an intermediate time \(t\) is estimated as:  
+ ** (Linear Interpolation)**:
+If two valid measurements exist at times \( t_0 \) and \( t_1 \) with values \( y_0 \) and \( y_1 \), the value at an intermediate time \( t \) is estimated as:  
+
 $$ y(t) = y_0 + (y_1 - y_0) \cdot \frac{t - t_0}{t_1 - t_0} $$
-
-
 
 *Edge Handling*:
 - `.ffill()` (Forward Fill) propagates the **last valid observation** forward to fill trailing gaps.
 - `.bfill()` (Backward Fill) propagates the **next valid observation** backward to fill leading gaps.
+
+
+
 
 
 
