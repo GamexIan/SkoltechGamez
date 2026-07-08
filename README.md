@@ -405,6 +405,13 @@ $$ y(t) = y_0 + (y_1 - y_0) \cdot \frac{t - t_0}{t_1 - t_0} $$
 - `.bfill()` (Backward Fill) propagates the **next valid observation** backward to fill leading gaps.
 
 
+<div align="center">
+  <img src="https://github.com/GamexIan/SkoltechGamez/blob/5993496c870b85083b5afab6d852ae568c22b17d/both_hub.png" alt="Comparación de la serie original y la imputada" style="width: 50%;"/>
+  <br>
+  <em>Figure: Comparison of the Original and Adapted Versions of AGUA SANTA.</em>
+</div>
+
+
 
 
 
