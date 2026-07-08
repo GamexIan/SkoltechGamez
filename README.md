@@ -319,24 +319,6 @@ $$
 
 ---
 
-## 5. Goodness‑of‑Fit Testing
-
-A **goodness‑of‑fit test** formally evaluates whether observed data $X_1, \ldots, X_n$ come from a specified distribution $\hat{f}$. We use the **chi‑square test** with significance level $\alpha = 0.05$.
-
-**Procedure:**
-
-1. Divide the data range into $k$ intervals: $[a_0, a_1), [a_1, a_2), \ldots, [a_{k-1}, a_k)$.
-2. Count the observed frequencies $N_j$ in each interval.
-3. Compute the expected probability $p_j$ under the hypothesised distribution:
-   - Continuous: $p_j = \int_{a_{j-1}}^{a_j} \hat{f}(x) \, dx$
-   - Discrete: $p_j = \sum_{a_{j-1} \le x < a_j} \hat{p}(x)$
-4. Compute the test statistic:
-   $$
-   \hat{\chi}^2 = \sum_{j=1}^{k} \frac{(N_j - n p_j)^2}{n p_j}. \qquad (3.4.4)
-   $$
-5. Reject $H_0$ if $\hat{\chi}^2 > \chi^2_{k-1, 1-\alpha}$.
-
----
 
 ## 6. Python Implementation
 
