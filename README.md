@@ -171,26 +171,7 @@ Two common service level measures:
 | **Type I (α)** | Probability that no stockout occurs during a replenishment cycle. |
 | **Type II (β)** | Fill rate: proportion of demand satisfied from available stock. |
 
-### 2.4 Cost Components
 
-| Cost | Symbol | Description |
-|------|--------|-------------|
-| Holding cost | $h$ | Cost per unit held per time unit (warehousing, insurance, obsolescence). Typically 20‑30% of product value. |
-| Ordering cost | $K$ | Fixed cost per order (administrative, transportation). |
-| Lost sales cost | $\ell$ | Penalty per unit of lost demand. It includes lost profit and reputational damage. |
-
-**Lost sales cost estimation:**
-
-$$
-\ell = \varepsilon \, \bar{v} \, d, \qquad (3.1.2)
-$$
-
-where:
-- $\varepsilon \ge 1$ is a penalty multiplier,
-- $\bar{v}$ is the average daily sales,
-- $d$ is the average lead time in days.
-
----
 
 ## 3. Stochastic Processes for Inventory Modelling
 
